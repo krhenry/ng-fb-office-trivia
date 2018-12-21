@@ -10,7 +10,7 @@ import { environment } from '../environments/environment';
 import { QuestionsComponent } from './questions/questions.component';
 import { QuestionComponent } from './questions/question/question.component';
 import { QuestionListComponent } from './questions/question-list/question-list.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { TriviaQuestionComponent } from './trivia/trivia-question/trivia-question.component';
 import { TriviaAnswerComponent } from './trivia/trivia-answer/trivia-answer.component';
@@ -34,7 +34,8 @@ import { HeaderComponent } from './navigation/header/header.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     FormsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

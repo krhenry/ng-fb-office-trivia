@@ -1,3 +1,11 @@
-<p>
-  trivia-answer works!
-</p>
+<form #answerForm="ngForm" (ngSubmit)="onSubmit(answerForm)">
+  <div class="form-group">
+    <input class="form-control" name="answer" ngModel placeholder="Answer" required>
+  </div>
+  <div class="form-group">
+    <button style="margin-right: 5px;" class="btn btn-default" type="submit" [disabled]="!answerForm.valid">
+      <i class="fa fa-floppy-o"></i>
+        Submit
+    </button>
+    </div>
+</form>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
+import { FormBuilder, FormGroup, Validators, FormControl, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-trivia-answer',
@@ -6,10 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./trivia-answer.component.css']
 })
 export class TriviaAnswerComponent implements OnInit {
+  answers: string[] = [];
+  addAnswer: '';
 
-  constructor() { }
+  constructor(private tostr: ToastrService) { }
 
   ngOnInit() {
+  }
+
+  onSubmit(answerForm: NgForm): void {
+    const x = answerForm.value.answer;
+    this.answers.push(x);
+    answerForm.reset();
   }
 
 }
