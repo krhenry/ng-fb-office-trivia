@@ -35,9 +35,12 @@
     <div class="card">
       <div class="card-header" id="'headingOne' + i">
         <h5 class="mb-0">
-          <button class="btn collapsed" type="button" data-toggle="collapse" data-target="'#collapseOne' + i" aria-expanded="true" aria-controls="'collapseOne' + i">
+          <button class="btn collapsed" (click)="onEdit(question)" type="button" data-toggle="collapse" data-target="'#collapseOne' + i" aria-expanded="true" aria-controls="'collapseOne' + i">
             Question {{ i + 1}}
           </button>
+          <a class="btn" (click)="onDelete(question.$key)">
+            <i class="fa fa-trash-o"></i>
+          </a>
         </h5>
       </div>
 
