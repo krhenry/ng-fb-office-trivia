@@ -19,10 +19,12 @@ export class QuestionComponent implements OnInit {
   onSubmit(questionForm: NgForm) {
     if (questionForm.value.$key == null) {
       this.questionService.insertQuestion(questionForm.value);
+      this.resetForm(questionForm);
+      this.tostr.success('Submitted Successfully', 'Question Submitted');
     } else {
       this.questionService.updateQuestion(questionForm.value);
       this.resetForm(questionForm);
-      this.tostr.success('Submitted Successfully', 'Question Submitted');
+      this.tostr.success('Submitted Successfully', 'Question Updated');
     }
   }
 
@@ -32,7 +34,7 @@ export class QuestionComponent implements OnInit {
     } else {
       this.questionService.selectedQuestion = {
         $key: null,
-        season: 0,
+        season: '',
         question: '',
         answer: ''
       };

@@ -2,22 +2,25 @@
   <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="questionService.selectedQuestion.$key">
 <div class="form-group">
   <label>Season</label>
-  <input type="number" class="form-control" name="season" #season="ngModel" [(ngModel)]="questionService.selectedQuestion.season" placeholder="Season" required>
+  <input class="form-control" name="season" #season="ngModel" [(ngModel)]="questionService.selectedQuestion.season" placeholder="Season" required>
 </div>
 <div class="form-group">
   <label>Question</label>
-  <input class="form-control" name="question" #question="ngModel" [(ngModel)]="questionService.selectedQuestion.question" placeholder="Question" required>
+  <!-- <input class="form-control" name="question" #question="ngModel" [(ngModel)]="questionService.selectedQuestion.question" placeholder="Question" required> -->
+  <textarea rows="3" class="form-control" name="question" #question="ngModel" [(ngModel)]="questionService.selectedQuestion.question" placeholder="Question" required></textarea>
 </div>
 <div class="form-group">
   <label>Answer</label>
   <input class="form-control" name="answer" #answser="ngModel" [(ngModel)]="questionService.selectedQuestion.answer" placeholder="Answer" required>
 </div>
 <div class="form-group">
-  <button class="btn btn-default" type="submit" [disabled]="!questionForm.valid">
+  <button style="margin-right: 5px;" class="btn btn-default" type="submit" [disabled]="!questionForm.valid">
     <i class="fa fa-floppy-o"></i>
-     Submit</button>
+     Submit
+  </button>
   <button class="btn btn-default" type="button" (click)="resetForm(questionForm)">
     <i class="fa fa-repeat"></i>
-     Reset</button>
+     Reset
+    </button>
 </div>
 </form>

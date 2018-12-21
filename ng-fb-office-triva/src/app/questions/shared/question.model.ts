@@ -1,6 +1,6 @@
 export class Question {
   $key: string;
-  season: number;
+  season: string;
   question: string;
   answer: string;
 }

@@ -10,9 +10,13 @@ import { Question } from '../shared/question.model';
 })
 export class QuestionListComponent implements OnInit {
   questionList: Question[];
+  showAnswers: boolean;
+
   constructor(private questionService: QuestionService, private tostr: ToastrService) { }
 
   ngOnInit() {
+    this.showAnswers = false;
+
     const x = this.questionService.getData();
     x.snapshotChanges().subscribe(item => {
       this.questionList = [];
