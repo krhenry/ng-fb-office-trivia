@@ -16,6 +16,7 @@ import { TriviaQuestionComponent } from './trivia/trivia-question/trivia-questio
 import { TriviaAnswerComponent } from './trivia/trivia-answer/trivia-answer.component';
 import { TriviaComponent } from './trivia/trivia.component';
 import { HeaderComponent } from './navigation/header/header.component';
+import { GameComponent } from './game/game.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { HeaderComponent } from './navigation/header/header.component';
     TriviaComponent,
     TriviaQuestionComponent,
     TriviaAnswerComponent,
-    HeaderComponent
+    HeaderComponent,
+    GameComponent
   ],
   imports: [
     BrowserModule,

@@ -43,4 +43,5 @@ export class TriviaQuestionComponent implements OnInit {
     }
     return array;
   }
+
 }
