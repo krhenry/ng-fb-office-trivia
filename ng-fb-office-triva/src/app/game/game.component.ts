@@ -24,11 +24,16 @@ export class GameComponent implements OnInit {
 
   finalList: any = [];
 
+  correct = 0;
+  incorrect = 0;
+
+  color: string;
+
   constructor(private questionService: QuestionService) { }
 
   ngOnInit() {
     this.qNbr = 0;
-    this.qCount = 3;
+    this.qCount = 2;
 
     const x = this.questionService.getData();
     x.snapshotChanges().subscribe(item => {
@@ -59,6 +64,37 @@ export class GameComponent implements OnInit {
       array[i] = t;
     }
     return array;
+  }
+
+  wrong(i) {
+    const id = 'headingButton' + i;
+    this.incorrect += 1;
+
+    document.getElementById(id).style.background = 'red';
+    document.getElementById(id).style.color = 'white';
+  }
+
+  right(i) {
+    const id = 'headingButton' + i;
+    this.correct += 1;
+
+    document.getElementById(id).style.background = 'green';
+    document.getElementById(id).style.color = 'white';
+
+  }
+
+  undo(i) {
+    const id = 'headingButton' + i;
+    this.color = document.getElementById(id).style.background;
+
+    document.getElementById(id).style.background = '#ddd';
+    document.getElementById(id).style.color = 'black';
+
+    if (this.color === 'green') {
+      this.correct -= 1;
+    } else if (this.color === 'red') {
+      this.incorrect -= 1;
+    }
   }
 
   onSubmit(answerForm: NgForm): void {
