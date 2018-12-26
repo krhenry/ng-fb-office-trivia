@@ -1,10 +1,20 @@
 <div *ngIf="qCount != 0">
   <div class="text-center">
     <h2 class="jumbotron">Office Trivia!</h2>
+    <div *ngIf="!numberSubmitted" style="margin: 0 auto; width: 43%" class="container">
+      <form #numForm="ngForm" (ngSubmit)="numSubmit(numForm)" class="form">
+        <div class="form-group mx-sm-5 mb-10">
+          <label><h2>How many questions?</h2></label>
+          <input type="text" name="num" [(ngModel)]="num" class="form-control form-control-lg" id="inputNumber" placeholder="Question Number">
+        </div>
+        <button type="submit" class="btn btn-primary">Confirm</button>
+      </form>
+    </div>
   </div>
-  <div class="row">
+
+  <div *ngIf="numberSubmitted" class="row">
     <div class="col-md-12">
-      <h4>Question: {{qNbr + 1}}</h4>
+      <h4>Question: {{qNbr + 1}} / {{ qTotal }}</h4>
       <h2>
         <p>{{currentQuestion}}</p>
       </h2>
@@ -27,6 +37,9 @@
 
 <div *ngIf="qCount == 0">
   <div class="row">
+    <div class="col-md-2">
+      <h1>Correct: {{ correct }}</h1>
+    </div>
     <div class="col-md-8">
       <div *ngFor="let final of finalList; index as i">
         <div class="accordion">
@@ -54,9 +67,6 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="col-md-2">
-      <h1>Correct: {{ correct }}</h1>
     </div>
     <div class="col-md-2">
       <h1>Incorrect: {{ incorrect }}</h1>

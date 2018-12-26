@@ -29,11 +29,15 @@ export class GameComponent implements OnInit {
 
   color: string;
 
+  numberSubmitted: boolean;
+  qTotal: number;
+
   constructor(private questionService: QuestionService) { }
 
   ngOnInit() {
     this.qNbr = 0;
-    this.qCount = 2;
+    // this.qCount = 2;
+    this.numberSubmitted = false;
 
     const x = this.questionService.getData();
     x.snapshotChanges().subscribe(item => {
@@ -48,10 +52,14 @@ export class GameComponent implements OnInit {
       this.rndQuestionList = this.shuffle(this.questionList);
       this.rndQuestionList = this.rndQuestionList.slice(this.qNbr, this.qCount);
 
-      console.log(this.rndQuestionList);
-
       this.currentQuestion = this.rndQuestionList[0].question;
     });
+  }
+
+  numSubmit(form?: NgForm) {
+    this.qTotal = form.value.num;
+    this.qCount = form.value.num;
+    this.numberSubmitted = true;
   }
 
   shuffle(array) {
@@ -113,7 +121,7 @@ export class GameComponent implements OnInit {
     if (this.qCount !== 0) {
       this.currentQuestion = this.rndQuestionList[this.qNbr].question;
     } else if (this.qCount === 0) {
-      console.log('questions done');
+
     }
 
 
