@@ -22,7 +22,7 @@
     <div class="col-md-12">
       <form #answerForm="ngForm" (ngSubmit)="onSubmit(answerForm)">
         <div class="form-group">
-          <input class="form-control" name="answer" ngModel placeholder="Answer" required>
+          <input class="form-control" type="password" name="answer" ngModel placeholder="Answer" required>
         </div>
         <div class="form-group">
           <button style="margin-right: 5px;" class="btn btn-default" type="submit" [disabled]="!answerForm.valid">
@@ -49,11 +49,11 @@
                 <button class="btn collapsed" (click)="undo(i)" id="headingButton{{i}}" type="button" data-toggle="collapse" data-target="'#collapseOne' + i" aria-expanded="true" aria-controls="'collapseOne' + i">
                   Question {{ i + 1}}
                 </button>
-                <a id="b-wrong" disabled (click)="wrong(i)" class="btn pull-right">
+                <a id="b-wrong" (click)="wrong(i)" class="btn pull-right">
                   <i class="fa fa-close"></i>
                 </a>
-                <a id="b-right" disabled (click)="right(i)" class="btn pull-right">
-                  <i  class="fa fa-check"></i>
+                <a (click)="right(i)" id="b-right" class="btn pull-right">
+                  <i id="b-right"  class="fa fa-check"></i>
                 </a>
               </h5>
             </div>
@@ -61,6 +61,8 @@
             <div id="'collapseOne' + i" class="collapse show" aria-labelledby="'headingOne' + i" data-parent="#accordionExample">
               <div class="card-body">
                 <p><b>Question:</b> {{final.question}}</p>
+                <p><b>My Answer:</b> {{final.myAnswer}}</p>
+                <br>
                 <p><b>Answer:</b> {{final.answer}}</p>
               </div>
             </div>

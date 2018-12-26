@@ -16,6 +16,7 @@ export class GameComponent implements OnInit {
   questionList: Question[];
   rndQuestionList: Question[];
   currentQuestion: string;
+  currentAnswer: string;
   count = 0;
   random: number;
 
@@ -36,7 +37,6 @@ export class GameComponent implements OnInit {
 
   ngOnInit() {
     this.qNbr = 0;
-    // this.qCount = 2;
     this.numberSubmitted = false;
 
     const x = this.questionService.getData();
@@ -53,6 +53,7 @@ export class GameComponent implements OnInit {
       this.rndQuestionList = this.rndQuestionList.slice(this.qNbr, this.qCount);
 
       this.currentQuestion = this.rndQuestionList[0].question;
+      this.currentAnswer = this.rndQuestionList[0].answer;
     });
   }
 
@@ -88,7 +89,6 @@ export class GameComponent implements OnInit {
 
     document.getElementById(id).style.background = 'green';
     document.getElementById(id).style.color = 'white';
-
   }
 
   undo(i) {
@@ -115,13 +115,14 @@ export class GameComponent implements OnInit {
 
     this.finalList.push({
       question: this.currentQuestion,
-      answer: x
+      answer: this.currentAnswer,
+      myAnswer: x
     });
 
     if (this.qCount !== 0) {
       this.currentQuestion = this.rndQuestionList[this.qNbr].question;
+      this.currentAnswer = this.rndQuestionList[this.qNbr].answer;
     } else if (this.qCount === 0) {
-
     }
 
 
