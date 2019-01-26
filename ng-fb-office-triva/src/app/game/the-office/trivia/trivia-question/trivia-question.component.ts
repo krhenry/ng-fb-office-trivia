@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { QuestionService } from 'src/app/questions/shared/question.service';
-import { Question } from 'src/app/questions/shared/question.model';
+import { QuestionService } from '../../questions/shared/question.service';
+import { Question } from '../../questions/shared/question.model';
+// import { QuestionService } from 'src/app/questions/shared/question.service';
+// import { Question } from 'src/app/questions/shared/question.model';
+
 
 @Component({
   selector: 'app-trivia-question',
