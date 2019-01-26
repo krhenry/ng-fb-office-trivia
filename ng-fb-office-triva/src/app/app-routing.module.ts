@@ -3,11 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { TriviaComponent } from './game/the-office/trivia/trivia.component';
 import { QuestionsComponent } from './game/the-office/questions/questions.component';
 import { PlayComponent } from './game/the-office/play/play.component';
-// import { TriviaComponent } from './trivia/trivia.component';
-// import { QuestionsComponent } from './questions/questions.component';
-// import { PlayComponent } from './play/play.component';
-
-
 
 const routes: Routes = [
   { path: '', component: TriviaComponent },

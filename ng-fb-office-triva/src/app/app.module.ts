@@ -7,14 +7,8 @@ import { AppComponent } from './app.component';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { environment } from '../environments/environment';
-// import { QuestionsComponent } from './questions/questions.component';
-// import { QuestionComponent } from './questions/question/question.component';
-// import { QuestionListComponent } from './questions/question-list/question-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
-// import { TriviaQuestionComponent } from './trivia/trivia-question/trivia-question.component';
-// import { TriviaAnswerComponent } from './trivia/trivia-answer/trivia-answer.component';
-// import { TriviaComponent } from './trivia/trivia.component';
 import { HeaderComponent } from './navigation/header/header.component';
 import { QuestionsComponent } from './game/the-office/questions/questions.component';
 import { QuestionComponent } from './game/the-office/questions/question/question.component';
@@ -23,7 +17,6 @@ import { TriviaQuestionComponent } from './game/the-office/trivia/trivia-questio
 import { TriviaAnswerComponent } from './game/the-office/trivia/trivia-answer/trivia-answer.component';
 import { TriviaComponent } from './game/the-office/trivia/trivia.component';
 import { PlayComponent } from './game/the-office/play/play.component';
-// import { PlayComponent } from './play/play.component';
 
 @NgModule({
   declarations: [
