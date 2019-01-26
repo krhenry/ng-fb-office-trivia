@@ -10,6 +10,8 @@ import { environment } from '../environments/environment';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { HeaderComponent } from './navigation/header/header.component';
+
+// The Office
 import { QuestionsComponent } from './game/the-office/questions/questions.component';
 import { QuestionComponent } from './game/the-office/questions/question/question.component';
 import { QuestionListComponent } from './game/the-office/questions/question-list/question-list.component';
@@ -17,6 +19,9 @@ import { TriviaQuestionComponent } from './game/the-office/trivia/trivia-questio
 import { TriviaAnswerComponent } from './game/the-office/trivia/trivia-answer/trivia-answer.component';
 import { TriviaComponent } from './game/the-office/trivia/trivia.component';
 import { PlayComponent } from './game/the-office/play/play.component';
+
+// Villainous
+import { VillainousBoardComponent } from './game/villainous/villainous-board/villainous-board.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +33,8 @@ import { PlayComponent } from './game/the-office/play/play.component';
     TriviaQuestionComponent,
     TriviaAnswerComponent,
     HeaderComponent,
-    PlayComponent
+    PlayComponent,
+    VillainousBoardComponent
   ],
   imports: [
     BrowserModule,
