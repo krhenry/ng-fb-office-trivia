@@ -4,12 +4,12 @@ import { QuestionService } from '../questions/shared/question.service';
 import { NgForm } from '@angular/forms';
 
 @Component({
-  selector: 'app-game',
-  templateUrl: './game.component.html',
-  styleUrls: ['./game.component.css'],
+  selector: 'app-play',
+  templateUrl: './play.component.html',
+  styleUrls: ['./play.component.css'],
   providers: [QuestionService]
 })
-export class GameComponent implements OnInit {
+export class PlayComponent implements OnInit {
   qNbr: number;
   qCount: number;
 
